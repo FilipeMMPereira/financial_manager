@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.financialmanager.databinding.FragmentHomeBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -26,6 +27,18 @@ class HomeFragment : Fragment() {
     ): View {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val itemList = listOf(
+            CashFlowItem("Produto 1", "$10"),
+            CashFlowItem("Produto 2", "$20"),
+            CashFlowItem("Produto 3", "$15")
+        )
+        val adapter = CashFlowAdapter(itemList)
+        binding.recycleViewCashFlow.layoutManager = LinearLayoutManager(requireContext())
+        binding.recycleViewCashFlow.adapter = adapter
     }
 
 }
