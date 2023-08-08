@@ -8,8 +8,8 @@ import com.example.financialmanager.databinding.ItemRowCashFlowBinding
 class CashFlowAdapter(private val itemList: List<CashFlowItem>): RecyclerView.Adapter<CashFlowAdapter.ViewHolder>() {
     class ViewHolder(private val binding:ItemRowCashFlowBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(item: CashFlowItem){
-            binding.textViewItemName.text = item.name
-            binding.textViewItemPrice.text = item.price
+            binding.textTitle.text = item.name
+            binding.textAmount.text = item.price
         }
     }
 

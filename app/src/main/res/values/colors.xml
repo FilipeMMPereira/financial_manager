@@ -10,4 +10,6 @@
     <color name="dashboard_item_2">#4DE9C9</color>
     <color name="dashboard_item_3">#72A4FF</color>
     <color name="dashboard_item_4">#8B78FF</color>
+    <color name="edit_text_background">#f6fbff</color>
+    <color name="edit_text_border">#03A9F4</color>
 </resources>

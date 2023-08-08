@@ -10,10 +10,6 @@ import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.example.financialmanager.databinding.FragmentLoginBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
@@ -45,6 +41,10 @@ class LoginFragment : Fragment() {
                 Toast.makeText(requireContext(), "Credenciais inválidas", Toast.LENGTH_SHORT).show()
             }
 
+        }
+
+        binding.textCreateAccount.setOnClickListener{
+            Navigation.findNavController(view).navigate(R.id.createAccountFragment)
         }
     }
 

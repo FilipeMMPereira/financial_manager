@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginFragment"
+    tools:context=".CreateAccountFragment"
     android:orientation="vertical"
     android:gravity="center"
     android:background="@color/primary">
@@ -19,29 +19,31 @@
         android:backgroundTint="@color/white"
         android:layout_marginStart="@dimen/_16sdp"
         android:layout_marginTop="@dimen/_16sdp"
+        android:clickable="true"
         app:maxImageSize="@dimen/_30sdp"
-        app:tint="@android:color/holo_blue_dark"
-        />
+        app:tint="@android:color/holo_blue_dark" />
+
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_16sdp"
-        android:text="@string/welcome_nback"
+        android:text="New\nAccount"
         android:textColor="@color/white"
         android:textSize="@dimen/_36sdp"
         app:layout_constraintBottom_toTopOf="@+id/guideline3"
         app:layout_constraintStart_toStartOf="parent"
-
         app:layout_constraintTop_toBottomOf="@id/floatingActionButton" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="@dimen/_200sdp" />
+        app:layout_constraintGuide_begin="@dimen/_170sdp" />
 
     <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardViewCreateAccount"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -53,87 +55,94 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
+            <!-- Campo de Nome -->
             <EditText
-                android:id="@+id/editTextEmail"
+                android:id="@+id/editTextName"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_47sdp"
                 android:layout_marginHorizontal="@dimen/_16sdp"
                 android:layout_marginTop="@dimen/_32sdp"
                 android:background="@drawable/edit_text_background"
-                android:drawableStart="@drawable/email"
+                android:drawableStart="@drawable/person"
                 android:drawablePadding="@dimen/_8sdp"
                 android:drawableTint="@color/primary"
-                android:hint="@string/e_mail"
-                android:inputType="textEmailAddress"
+                android:hint="Name"
+                android:inputType="text"
                 android:textSize="16dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:padding="@dimen/_8sdp"/>
+                android:padding="@dimen/_8sdp" />
 
+            <!-- Campo de E-mail -->
+            <EditText
+                android:id="@+id/editTextEmail"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_47sdp"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:background="@drawable/edit_text_background"
+                android:drawableStart="@drawable/email"
+                android:drawablePadding="@dimen/_8sdp"
+                android:drawableTint="@color/primary"
+                android:hint="E-mail"
+                android:inputType="textEmailAddress"
+                android:textSize="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/editTextName"
+                android:padding="@dimen/_8sdp" />
+
+            <!-- Campo de Senha -->
             <EditText
                 android:id="@+id/editTextPassword"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_47sdp"
                 android:layout_marginHorizontal="@dimen/_16sdp"
-                android:layout_marginTop="@dimen/_32sdp"
+                android:layout_marginTop="@dimen/_16sdp"
                 android:background="@drawable/edit_text_background"
                 android:drawableStart="@drawable/lock"
                 android:drawablePadding="@dimen/_8sdp"
                 android:drawableTint="@color/primary"
                 android:hint="@string/password"
                 android:inputType="textPassword"
-                android:textSize="16sp"
+                android:textSize="16dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/editTextEmail"
-                android:padding="@dimen/_8sdp"/>
+                android:padding="@dimen/_8sdp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_16sdp"
-                android:layout_marginEnd="@dimen/_16sdp"
-                android:text="@string/forget_password"
-                android:textColor="@color/primary"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
-
-            <Button
-                android:id="@+id/buttonLogin"
+            <!-- Campo de Confirmar Senha -->
+            <EditText
+                android:id="@+id/editTextConfirmPassword"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_47sdp"
                 android:layout_marginHorizontal="@dimen/_16sdp"
-                android:text="@string/login"
+                android:layout_marginTop="@dimen/_16sdp"
+                android:background="@drawable/edit_text_background"
+                android:drawableStart="@drawable/lock"
+                android:drawablePadding="@dimen/_8sdp"
+                android:drawableTint="@color/primary"
+                android:hint="Confirmar Senha"
+                android:inputType="textPassword"
+                android:textSize="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/editTextPassword"
+                android:padding="@dimen/_8sdp" />
+
+            <!-- Botão de Criar Conta -->
+            <Button
+                android:id="@+id/buttonCreateAccount"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_47sdp"
+                android:layout_marginHorizontal="@dimen/_16sdp"
+                android:text="Criar Conta"
                 app:cornerRadius="@dimen/_16sdp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editTextPassword" />
+                app:layout_constraintTop_toBottomOf="@+id/editTextConfirmPassword" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/_16sdp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
+            <!-- ... Outros elementos do formulário ... -->
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/don_t_have_an_account" />
-
-                <TextView
-                    android:id="@+id/text_create_account"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/sign_up"
-                    android:textColor="@color/primary" />
-            </LinearLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </com.google.android.material.card.MaterialCardView>
-
-
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
