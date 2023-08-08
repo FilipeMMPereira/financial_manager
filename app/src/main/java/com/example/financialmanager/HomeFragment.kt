@@ -34,7 +34,12 @@ class HomeFragment : Fragment() {
         val itemList = listOf(
             CashFlowItem("Produto 1", "$10"),
             CashFlowItem("Produto 2", "$20"),
-            CashFlowItem("Produto 3", "$15")
+            CashFlowItem("Produto 3", "$15"),
+            CashFlowItem("Produto 4", "$40"),
+            CashFlowItem("Produto 5", "$10"),
+            CashFlowItem("Produto 6", "$20"),
+            CashFlowItem("Produto 7", "$15"),
+            CashFlowItem("Produto 8", "$40")
         )
         val adapter = CashFlowAdapter(itemList)
         binding.recycleViewCashFlow.layoutManager = LinearLayoutManager(requireContext())
