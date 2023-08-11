@@ -3,6 +3,7 @@ package com.example.financialmanager.model
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
+
 @Entity(tableName = "User")
 data class UserModel(
     var nome: String,

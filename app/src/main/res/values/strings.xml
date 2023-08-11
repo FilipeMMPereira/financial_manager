@@ -21,6 +21,8 @@
     <string name="e_mail">E-mail</string>
     <string name="welcome_nback">Welcome\nBack</string>
     <string name="account">Account</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="create_account">Create Account</string>
     <string-array name="opcoes">
         <item>Today</item>
         <item>Opção 2</item>

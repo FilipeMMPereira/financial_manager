@@ -24,5 +24,8 @@ class CreateAccountFragment : Fragment() {
         binding.floatingActionButton.setOnClickListener{
             Navigation.findNavController(view).popBackStack()
         }
+        binding.buttonCreateAccount.setOnClickListener{
+            binding.editTextEmail.text.toString()
+        }
     }
 }
