@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity() {
 
         if (isLoginPage) {
             binding.buttonNavigation.isVisible = false
+            print("Chegou aque")
         }
 
     }
