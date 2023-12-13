@@ -63,4 +63,8 @@ class UserViewModel(application: Application) : AndroidViewModel(application) {
             Log.d("UserViewModel", "ID: ${user.id}, Name: ${user.name}, Email: ${user.email}")
         }
     }
+
+    fun authenticate(email: String, password: String): Boolean {
+        return repository.authenticate(email, password)
+    }
 }

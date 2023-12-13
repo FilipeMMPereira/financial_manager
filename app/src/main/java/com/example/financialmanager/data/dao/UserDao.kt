@@ -9,6 +9,9 @@ import com.example.financialmanager.model.UserModel
 
 @Dao
 interface UserDao {
+
+    @Query("SELECT * FROM User WHERE email = :email AND password = :password")
+    fun getUserByEmailAndPassword(email: String, password: String): UserModel?
     @Insert
     fun insert(user: UserModel): Long
 

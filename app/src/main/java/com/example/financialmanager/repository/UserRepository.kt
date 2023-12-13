@@ -21,6 +21,10 @@ class UserRepository (context: Context){
 //        }
 //
 //    }
+    fun authenticate(email: String, password: String): Boolean {
+        val user = appDataBase.getUserByEmailAndPassword(email, password)
+        return user != null
+    }
 
     fun insert(user: UserModel): Boolean {
         return appDataBase.insert(user) > 0
