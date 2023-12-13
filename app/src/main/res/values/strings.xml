@@ -23,6 +23,7 @@
     <string name="account">Account</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="create_account">Create Account</string>
+    <string name="phone_number">Phone Number</string>
     <string-array name="opcoes">
         <item>Today</item>
         <item>Opção 2</item>

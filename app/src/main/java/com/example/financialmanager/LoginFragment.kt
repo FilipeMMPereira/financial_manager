@@ -38,7 +38,9 @@ class LoginFragment : Fragment() {
             if(email == "filipe@gmail.com" && password == "123456") {
                 Navigation.findNavController(view).navigate(R.id.homeFragment)
             } else {
+                println("Esta tudo bem")
                 Toast.makeText(requireContext(), "Credenciais inválidas", Toast.LENGTH_SHORT).show()
+
             }
 
         }
