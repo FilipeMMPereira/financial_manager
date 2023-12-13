@@ -36,10 +36,10 @@ class CreateAccountFragment : Fragment() {
             val password = binding.editTextPassword.text.toString()
             val phone = binding.editTextPhone.text.toString()
             val model = UserModel(name, email ,phone, password)
-            println(viewModel.getAll())
             viewModel.insert(model)
             viewModel.saveUser.observe(this) { observer ->
                 Toast.makeText(requireContext(), observer, Toast.LENGTH_SHORT).show()
+                Navigation.findNavController(view).popBackStack()
             }
         }
     }

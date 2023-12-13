@@ -6,9 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.example.financialmanager.databinding.FragmentLoginBinding
+import com.example.financialmanager.viewModel.UserViewModel
 
 
 /**
@@ -19,7 +21,7 @@ import com.example.financialmanager.databinding.FragmentLoginBinding
 class LoginFragment : Fragment() {
 
     private lateinit var binding: FragmentLoginBinding;
-
+    private lateinit var viewModel: UserViewModel;
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -31,18 +33,17 @@ class LoginFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        viewModel = ViewModelProvider(this).get(UserViewModel::class.java)
+
         binding.buttonLogin.setOnClickListener {
             val email = binding.editTextEmail.text.toString()
             val password = binding.editTextPassword.text.toString()
 
-            if(email == "filipe@gmail.com" && password == "123456") {
+            if (viewModel.authenticate(email, password)) {
                 Navigation.findNavController(view).navigate(R.id.homeFragment)
             } else {
-                println("Esta tudo bem")
                 Toast.makeText(requireContext(), "Credenciais inválidas", Toast.LENGTH_SHORT).show()
-
             }
-
         }
 
         binding.textCreateAccount.setOnClickListener{
